@@ -1,3 +1,4 @@
+#Function 1
 import pandas as pd
 import numpy as np
 
@@ -65,6 +66,7 @@ stop_words_dict = {
     ]
 }
 
+#Function 2
 ### START FUNCTION
 def dictionary_of_metrics(items):
     # your code here
@@ -88,6 +90,7 @@ def dictionary_of_metrics(items):
            'max':maximum}   #returning calculated metrics in a dictionary.
 ### END FUNCTION
 
+#Function 3
 ### START FUNCTION
 def five_num_summary(items):
     # your code here
@@ -109,6 +112,7 @@ def five_num_summary(items):
            'q3': q3,} #returning the calculated five number summary in a dictionary.
 ### END FUNCTION
 
+#Function 3
 ### START FUNCTION
 def date_parser(dates):
     # your code here
@@ -119,6 +123,7 @@ def date_parser(dates):
     return [y[0] for y in x] # return only the first element (date) in the list.
 ### END FUNCTION
 
+#Function 4
 ### START FUNCTION
 def extract_municipality_hashtags(df):
     # your code here
@@ -158,6 +163,7 @@ def extract_municipality_hashtags(df):
     return df1
 ### END FUNCTION
 
+#Function 5
 ### START FUNCTION
 def number_of_tweets_per_day(df):
     # your code here
@@ -181,6 +187,7 @@ def number_of_tweets_per_day(df):
 
 ### END FUNCTION
 
+#Function 6
 ### START FUNCTION
 def word_splitter(df):
     # your code here
@@ -192,6 +199,7 @@ def word_splitter(df):
     return df #return column named 'Split Tweets'
 ### END FUNCTION
 
+#Function 7
 ### START FUNCTION
 def stop_words_remover(df):
     # your code here
