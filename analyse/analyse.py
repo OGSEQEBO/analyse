@@ -1,4 +1,3 @@
-#Function 1
 import pandas as pd
 import numpy as np
 
@@ -66,7 +65,7 @@ stop_words_dict = {
     ]
 }
 
-#Function 2
+#Function 1
 ### START FUNCTION
 def dictionary_of_metrics(items):
     # your code here
@@ -90,7 +89,7 @@ def dictionary_of_metrics(items):
            'max':maximum}   #returning calculated metrics in a dictionary.
 ### END FUNCTION
 
-#Function 3
+#Function 2
 ### START FUNCTION
 def five_num_summary(items):
     # your code here
@@ -171,19 +170,11 @@ def number_of_tweets_per_day(df):
     on each date in the dataframe. It returns a new dataframe, grouped 
     by day with the number of tweets for that day. """
     
-    df1=df.copy()
-    dates=list(df1['Date'])#construct list from date column
-    dates_only=[]
-    #add dates iteratively in list
-    for date in dates :
-        temp=date[0:10]
-        dates_only.append(temp)
-    #return a new dataframe, grouped by day    
-    data=pd.DataFrame()
-    data['Date']=dates_only
-    data['Tweets']=1
-    data=data.groupby(['Date']).sum() #sum all tweets in the dataframe for that date entry
-    return data
+    twitter_df['Date'] = twitter_df['Date'].str[:10] #extract date column from dataframe
+    
+    output_df = twitter_df.groupby('Date').count() #count tweets per day
+    
+    return output_df
 
 ### END FUNCTION
 
@@ -191,7 +182,7 @@ def number_of_tweets_per_day(df):
 ### START FUNCTION
 def word_splitter(df):
     # your code here
-    """ The function takes ina pandas dataframe as input and it splits the sentences in 
+    """ The function takes in a pandas dataframe as input and it splits the sentences in 
     the dataframe's column into a list of seperate words. The created list is then placed
     in a column named 'Split Tweets' """
     
