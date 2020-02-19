@@ -186,7 +186,7 @@ def word_splitter(df):
     the dataframe's column into a list of seperate words. The created list is then placed
     in a column named 'Split Tweets' """
     
-    df["Split_Tweets"] = df.apply(lambda column: column.Tweets.lower().split(), axis=1) #split the sentences into separate words
+    df['Split Tweets'] = df['Tweets'].str.lower().str.split() #tokenization #split the sentences into separate words
     return df #return column named 'Split Tweets'
 ### END FUNCTION
 
